@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Productos - Mi Proyecto Flask{% endblock %}
+
+{% block content %}
+<h2>Productos</h2>
+<ul>
+  {% for p in products %}
+    <li>{{ p.name }} — ${{ '%.2f'|format(p.price) }}</li>
+  {% else %}
+    <li>No hay productos disponibles.</li>
+  {% endfor %}
+</ul>
+{% endblock %}

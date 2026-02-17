@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Facturas - Mi Proyecto Flask{% endblock %}
+
+{% block content %}
+<h2>Facturas</h2>
+<ul>
+  {% for f in invoices %}
+    <li>Factura #{{ f.id }} — Cliente: {{ f.client }} — Total: ${{ '%.2f'|format(f.total) }}</li>
+  {% else %}
+    <li>No hay facturas.</li>
+  {% endfor %}
+</ul>
+{% endblock %}
